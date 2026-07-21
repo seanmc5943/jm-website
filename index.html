@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sean McCulloch</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: white;
+            color: #333;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .main-wrapper {
+            padding-top: 2rem;
+            max-width: 950px;
+            margin: 0 auto;
+        }
+        .section-title {
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+        section:not(:first-of-type) {
+            border-top: 1px solid #e9e9e9;
+            padding-top: 2.5rem;
+            margin-top: 2rem;
+        }
+
+        /* Header contact links (Email, CV) */
+        .header-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            color: #4b5563;
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.2s;
+            background-color: transparent;
+            padding: 0;
+            margin: 0;
+        }
+        .header-link:hover { color: #8a4b38; }
+        .header-link:hover span { text-decoration: underline; }
+        .header-link svg {
+            width: 1.1rem;
+            height: 1.1rem;
+            flex-shrink: 0;
+            color: #6B7280;
+            transition: color 0.2s;
+        }
+        .header-link:hover svg { color: #8a4b38; }
+
+        /* Action row buttons / links (Abstract, Paper, NBER, Slides) */
+        .action-button, .action-link {
+            display: inline-flex;
+            align-items: center;
+            padding: 0;
+            border: none;
+            background: transparent;
+            color: #4a5568;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 400;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .action-button:hover, .action-link:hover { color: #8a4b38; }
+        .action-button:hover span, .action-link:hover span { text-decoration: underline; }
+        .action-button:focus, .action-link:focus { outline: none; }
+        .action-button svg, .action-link svg {
+            width: 1rem;
+            height: 1rem;
+            flex-shrink: 0;
+            color: #6B7280;
+            margin-right: 0.3rem;
+        }
+        .action-button:hover svg, .action-link:hover svg { color: #8a4b38; }
+
+        .publication-item {
+            margin-bottom: 2rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #f3f4f6;
+        }
+        .publication-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .publication-title {
+            font-weight: 500;
+            font-size: 1.125rem;
+            color: #1f2937;
+        }
+        .publication-journal {
+            color: #4b5563;
+            font-size: 0.95rem;
+            margin-top: 0.25rem;
+        }
+        .expandable-content {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: white;
+            border-radius: 0.375rem;
+            border: 1px solid #e5e7eb;
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.7;
+        }
+        .text-accent { color: #8a4b38; }
+        .text-accent-soft { color: #99593f; }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper mx-auto bg-white p-6 sm:p-8 md:p-10">
+
+        <header class="flex flex-col sm:flex-row items-center sm:items-center mb-8 pb-8 border-b border-gray-200">
+            <img src="assets/img/face_pic_2024_crop.jpg" alt="Sean McCulloch" class="w-40 sm:w-52 h-auto object-contain shadow-sm mb-6 sm:mb-0 sm:mr-8 border border-gray-200">
+
+            <div class="text-center sm:text-left">
+                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Sean McCulloch</h1>
+                <p class="text-lg sm:text-xl font-medium text-gray-700">
+                    Ph.D. Candidate in Economics, Brown University
+                </p>
+                <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-gray-600 text-sm">
+                    <a href="mailto:sean_mcculloch@brown.edu" class="header-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
+                        <span>Email: sean_mcculloch@brown.edu</span>
+                    </a>
+                    <a href="assets/pdf/cv.pdf" class="header-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
+                        <span>CV (PDF)</span>
+                    </a>
+                    <a href="https://scholar.google.com/citations?user=mBLx7GsAAAAJ&hl=en" class="header-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+                        <span>Google Scholar</span>
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold section-title">About Me</h2>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                I'm a PhD candidate in economics at Brown University. My research interests are in urban economics, real estate, applied econometrics, and industrial organization. I will be on the 2026&ndash;2027 job market.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                Before starting my PhD, I worked as a RA for Joseph Gyourko and Todd Sinai at the Wharton School.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                My CV is <a href="https://www.seanmcculloch.com/assets/pdf/cv.pdf" class="text-accent hover:underline">here</a>.
+            </p>
+        </section>
+
+        <script>
+            function toggleVisibility(targetId) {
+                const element = document.getElementById(targetId);
+                if (element) {
+                    element.style.display = element.style.display === "none" ? "block" : "none";
+                }
+            }
+        </script>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold section-title">Working Papers</h2>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    <a href="assets/pdf/hpgradient.pdf" class="text-accent hover:underline">"Valuing Neighborhood Amenities with Continuous Spatial Difference-in-Differences"</a>
+                    <span class="text-gray-500 text-base font-normal">(Job Market Paper)</span>
+                </h3>
+                <p class="publication-journal">
+                    <span class="font-medium">June 2026. Honorable mention for best student paper, 2025 North American UEA meeting.</span>
+                </p>
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-2">
+                    <button class="action-button" onclick="toggleVisibility('wp-abs-hpgradient')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 6H3"/><path d="M15 12H3"/><path d="M17 18H3"/></svg>
+                        <span>Abstract</span>
+                    </button>
+                </div>
+                <div id="wp-abs-hpgradient" class="expandable-content" style="display:none;">
+                    Many studies use difference-in-differences to identify the impact of an event occurring at a location in space on house prices. Empirical papers often estimate the average effect in a ring around the treatment site. However, in the hedonic model the welfare-relevant parameter is the price derivative with respect to distance. I develop a formal framework for understanding what can be learned about this parameter through difference-in-differences in settings with heterogeneous treatment effects. I show that the derivative of difference-in-differences estimates with respect to distance identifies the relevant parameter under homogeneity but can be biased under heterogeneity. I introduce an alternative assumption. When effects are concave in distance from the treatment site, a natural restriction in many spatial applications, I show a treatment event's welfare impact is bounded. I find in two applications, polluting industrial plants and low-income housing developments, that the estimated bounds are tight.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    <a href="assets/pdf/GM_2024.pdf" class="text-accent hover:underline">"The Distaste for Housing Density"</a>
+                </h3>
+                <p class="publication-journal">
+                    with <a href="https://real-faculty.wharton.upenn.edu/gyourko/" class="text-accent-soft hover:underline">Joseph Gyourko</a>.
+                    NBER Working Paper No. 33078. <span class="font-medium">October 2024.</span>
+                </p>
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-2">
+                    <button class="action-button" onclick="toggleVisibility('wp-abs-density')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 6H3"/><path d="M15 12H3"/><path d="M17 18H3"/></svg>
+                        <span>Abstract</span>
+                    </button>
+                    <a href="https://www.nber.org/papers/w33078" class="action-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        <span>NBER WP</span>
+                    </a>
+                </div>
+                <div id="wp-abs-density" class="expandable-content" style="display:none;">
+                    We characterize the distribution of suburban homeowners' preferences for housing unit density. To measure welfare changes under counterfactual increases in density, we first construct a novel house-level measure of exposure to density and identify its price effects in a boundary discontinuity design. On the borders of municipalities with larger minimum lot sizes, lots are 3,000 ft&sup2; larger and houses are $40,000 costlier. We exploit the systematic variation in density exposure induced by these discontinuities to estimate price effects. We then connect these estimates to a structural hedonic model of housing choice to retrieve individuals' preferences for density. Overall, we find an average welfare loss among incumbent homeowners from a 1/2 unit per acre increase in density (equivalent to a 0.3 standard deviation in density) of about $9,500, with significantly larger losses under counterfactual increases solely from rental units. The median welfare loss is only 55% of the average, implying a long, left tail of those with more extreme aversions to density. This tail disproportionately contains households in affluent, low-density neighborhoods.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    <a href="assets/pdf/MSTK_2025.pdf" class="text-accent hover:underline">"Sewers and Urbanization in the Developing World"</a>
+                </h3>
+                <p class="publication-journal">
+                    with <a href="https://mattschaelling.github.io/" class="text-accent-soft hover:underline">Matthew Schaelling</a>, <a href="https://sites.google.com/site/matthewturnereconhomepage/" class="text-accent-soft hover:underline">Matthew Turner</a>, and <a href="https://sites.google.com/view/torukitagawa/" class="text-accent-soft hover:underline">Toru Kitagawa</a>.
+                    NBER Working Paper No. 33597. <span class="font-medium">March 2025.</span>
+                </p>
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-2">
+                    <button class="action-button" onclick="toggleVisibility('wp-abs-sewers')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 6H3"/><path d="M15 12H3"/><path d="M17 18H3"/></svg>
+                        <span>Abstract</span>
+                    </button>
+                    <a href="https://www.nber.org/papers/w33597" class="action-link">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+                        <span>NBER WP</span>
+                    </a>
+                </div>
+                <div id="wp-abs-sewers" class="expandable-content" style="display:none;">
+                    We investigate the effects of sewer access on neighborhood characteristics in developing-world cities. Because it is more difficult to move sewage uphill than downhill, otherwise similar neighborhoods on opposite sides of drainage basin divides may face different costs of sewer access. We exploit this intuition to identify the effect of sewer access by comparing outcomes for neighborhoods on opposite sides of drainage basin divides. We estimate the effect of sewer access on census tract population density, literacy, and income for Brazil, Colombia, South Africa, Jordan, and Tanzania. On average, sewer access has a large effect on population density and almost none on demographics. These estimates imply that sewer networks are often as important for the economic geography of cities as transportation networks.
+                </div>
+            </div>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    "The Local Price Effects from Upzoning: Evidence from Major West Coast Cities"
+                </h3>
+                <p class="publication-journal">
+                    <span class="italic">Draft available upon request.</span>
+                </p>
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-2">
+                    <button class="action-button" onclick="toggleVisibility('wp-abs-upzoning')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 6H3"/><path d="M15 12H3"/><path d="M17 18H3"/></svg>
+                        <span>Abstract</span>
+                    </button>
+                </div>
+                <div id="wp-abs-upzoning" class="expandable-content" style="display:none;">
+                    I measure the spatial spillovers from increases in allowable housing unit density in the six largest U.S. West Coast cities. I construct a novel dataset of upzoned residential developments by linking historical zoning maps to new construction permits. In most of these cities, zoning maps were extremely persistent over time, leading to few new building developments in upzoned areas. Upzoned development sites decrease nearby single-family house prices by around 4% relative to units slightly farther away, but effects are extremely localized. I find little effect outside of 200 meters from these developments, with most of the effect occurring within 100 meters. Homes near bigger developments have larger price declines.
+                </div>
+            </div>
+
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold section-title">Works in Progress</h2>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    "Rent Control and Housing Quality"
+                </h3>
+            </div>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold section-title">Teaching</h2>
+
+            <div class="mb-4">
+                <h3 class="publication-title">Econ 1630: Mathematical Econometrics</h3>
+                <p class="publication-journal">TA for Jonathan Roth. Spring 2023.</p>
+            </div>
+
+            <div class="mb-4">
+                <h3 class="publication-title">Econ 1385: Intergenerational Poverty</h3>
+                <p class="publication-journal">TA for Anna Aizer. Fall 2022.</p>
+            </div>
+
+            <p class="text-gray-700">Received the Abramson Teaching Prize for 2022&ndash;2023.</p>
+        </section>
+
+        <section class="mb-8">
+            <h2 class="text-3xl font-bold section-title">Software</h2>
+
+            <div class="publication-item">
+                <h3 class="publication-title">
+                    <a href="https://ideas.repec.org/cgi-bin/htsearch?q=inflate" class="text-accent hover:underline">inflate: adjust time series to real dollars</a>
+                </h3>
+                <p class="publication-journal">
+                    Available on SSC.
+                </p>
+                <div class="mt-2 flex flex-wrap gap-x-3 gap-y-2">
+                    <button class="action-button" onclick="toggleVisibility('sw-info-inflate')">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                        <span>Information</span>
+                    </button>
+                </div>
+                <div id="sw-info-inflate" class="expandable-content" style="display:none;">
+                    A Stata package to inflate time series to real dollars. Available on the Boston College Statistical Software Components (SSC) archive.
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
