@@ -109,6 +109,52 @@
             color: #374151;
             line-height: 1.7;
         }
+        .layout {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+        .sidebar {
+            width: 210px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 2rem;
+        }
+        .sidebar-photo {
+            display: block;
+            width: 170px;
+            height: auto;
+            border: 1px solid #e5e7eb;
+            box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+        }
+        .sidebar-name {
+            font-size: 1.6rem;
+            font-weight: 800;
+            color: #111827;
+            line-height: 1.15;
+            margin-top: 1rem;
+        }
+        .sidebar-role {
+            font-size: 0.9rem;
+            color: #374151;
+            line-height: 1.45;
+            margin-top: 0.4rem;
+        }
+        .contact-links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.55rem;
+            margin-top: 1rem;
+            font-size: 0.9rem;
+        }
+        .content {
+            flex: 1;
+            min-width: 0;
+        }
+        @media (max-width: 640px) {
+            .layout { flex-direction: column; gap: 1.75rem; }
+            .sidebar { width: 100%; position: static; top: auto; }
+        }
         .text-accent { color: #8a4b38; }
         .text-accent-soft { color: #99593f; }
     </style>
@@ -117,18 +163,16 @@
 
     <div class="main-wrapper mx-auto bg-white p-6 sm:p-8 md:p-10">
 
-        <header class="flex flex-col sm:flex-row items-center sm:items-center mb-8 pb-8 border-b border-gray-200">
-            <img src="assets/img/face_pic_2024_crop.jpg" alt="Sean McCulloch" class="w-40 sm:w-52 h-auto object-contain shadow-sm mb-6 sm:mb-0 sm:mr-8 border border-gray-200">
+        <div class="layout">
 
-            <div class="text-center sm:text-left">
-                <h1 class="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-2">Sean McCulloch</h1>
-                <p class="text-lg sm:text-xl font-medium text-gray-700">
-                    Ph.D. Candidate in Economics, Brown University
-                </p>
-                <div class="mt-4 flex flex-wrap justify-center sm:justify-start gap-x-4 gap-y-2 text-gray-600 text-sm">
+            <aside class="sidebar">
+                <img src="assets/img/face_pic_2024_crop.jpg" alt="Sean McCulloch" class="sidebar-photo">
+                <h1 class="sidebar-name">Sean McCulloch</h1>
+                <p class="sidebar-role">Ph.D. Candidate in Economics, Brown University</p>
+                <div class="contact-links">
                     <a href="mailto:sean_mcculloch@brown.edu" class="header-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M16 8v5a3 3 0 0 0 6 0v-1a10 10 0 1 0-3.92 7.94"/></svg>
-                        <span>Email: sean_mcculloch@brown.edu</span>
+                        <span>Email</span>
                     </a>
                     <a href="assets/pdf/cv.pdf" class="header-link">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>
@@ -139,13 +183,17 @@
                         <span>Google Scholar</span>
                     </a>
                 </div>
-            </div>
-        </header>
+            </aside>
+
+            <div class="content">
 
         <section class="mb-8">
             <h2 class="text-3xl font-bold section-title">About Me</h2>
             <p class="text-gray-700 leading-relaxed mb-4">
-                I'm a PhD candidate in economics at Brown University. My research interests are in urban economics, real estate, applied econometrics, and industrial organization. I will be on the 2026&ndash;2027 job market.
+                I'm a PhD candidate in economics at Brown University. My research interests are in urban economics/real estate, applied econometrics, and industrial organization.
+            </p>
+            <p class="text-gray-700 leading-relaxed mb-4">
+                I will be on the 2026&ndash;2027 job market.
             </p>
             <p class="text-gray-700 leading-relaxed mb-4">
                 Before starting my PhD, I worked as a RA for Joseph Gyourko and Todd Sinai at the Wharton School.
@@ -299,6 +347,9 @@
                 </div>
             </div>
         </section>
+
+            </div>
+        </div>
 
     </div>
 
